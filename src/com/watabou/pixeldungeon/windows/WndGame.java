@@ -35,6 +35,8 @@ public class WndGame extends Window {
 	private static final String TXT_SETTINGS	= "Settings";
 	private static final String TXT_CHALLEGES	= "Challenges";
 	private static final String TXT_RANKINGS	= "Rankings";
+	private static final String TXT_SAVE		= "Save Game";
+	private static final String TXT_LOAD		= "Load Game";
 	private static final String TXT_START		= "Start New Game";
 	private static final String TXT_MENU		= "Main Menu";
 	private static final String TXT_EXIT		= "Exit Pixel Dungeon";
@@ -49,6 +51,28 @@ public class WndGame extends Window {
 	public WndGame() {
 		
 		super();
+		
+		if (Dungeon.hero.isAlive()) {		
+			addButton( new RedButton( TXT_SAVE ) {
+				@Override
+				protected void onClick() {
+					try {
+						Dungeon.saveAll();
+					} catch (IOException e) {
+						//
+					}
+					hide();
+				}
+			} );
+		}
+		
+		addButton( new RedButton( TXT_LOAD ) {
+			@Override
+			protected void onClick() {
+				InterlevelScene.mode = InterlevelScene.Mode.CONTINUE;
+				Game.switchScene( InterlevelScene.class );
+			}
+		} );	
 		
 		addButton( new RedButton( TXT_SETTINGS ) {
 			@Override
@@ -90,8 +114,8 @@ public class WndGame extends Window {
 					Game.switchScene( RankingsScene.class );
 				}
 			} );
-		}
-				
+		}			
+		
 		addButton( new RedButton( TXT_MENU ) {
 			@Override
 			protected void onClick() {
