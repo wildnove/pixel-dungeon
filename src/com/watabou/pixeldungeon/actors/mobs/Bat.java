@@ -21,7 +21,7 @@ import java.util.HashSet;
 
 import com.watabou.pixeldungeon.actors.Char;
 import com.watabou.pixeldungeon.effects.Speck;
-import com.watabou.pixeldungeon.items.potions.PotionOfHealing;
+import com.watabou.pixeldungeon.items.food.ChickenLeg;
 import com.watabou.pixeldungeon.items.weapon.enchantments.Leech;
 import com.watabou.pixeldungeon.sprites.BatSprite;
 import com.watabou.utils.Random;
@@ -41,8 +41,8 @@ public class Bat extends Mob {
 		
 		flying = true;
 		
-		loot = new PotionOfHealing();
-		lootChance = 0.125f;
+		loot = new ChickenLeg();
+		lootChance = 0.5f;
 	}
 	
 	@Override

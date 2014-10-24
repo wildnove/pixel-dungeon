@@ -26,7 +26,7 @@ import com.watabou.pixeldungeon.actors.buffs.Buff;
 import com.watabou.pixeldungeon.actors.buffs.Poison;
 import com.watabou.pixeldungeon.actors.buffs.Roots;
 import com.watabou.pixeldungeon.actors.buffs.Terror;
-import com.watabou.pixeldungeon.items.food.MysteryMeat;
+import com.watabou.pixeldungeon.items.food.ChickenLeg;
 import com.watabou.pixeldungeon.scenes.GameScene;
 import com.watabou.pixeldungeon.sprites.SpinnerSprite;
 import com.watabou.utils.Random;
@@ -43,8 +43,8 @@ public class Spinner extends Mob {
 		EXP = 9;
 		maxLvl = 16;
 		
-		loot = new MysteryMeat();
-		lootChance = 0.125f;
+		loot = new ChickenLeg();
+		lootChance = 0.5f;
 		
 		FLEEING = new Fleeing();
 	}
